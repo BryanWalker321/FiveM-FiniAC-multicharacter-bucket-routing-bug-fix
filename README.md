@@ -1,6 +1,7 @@
 # FiveM-FiniAC-multicharacter-bucket-routing-bug-fix
 For when server owners are using Fini Anti-Cheat and having server players put in temporary routing buckets due to a multicharacter script conflict. A lightweight and reliable routing bucket enforcement system for FiveM servers using Qbox (qbx_core) and Fini Anti-Cheat.  This script ensures all players are placed into a single routing bucket.
 
+----------------
 
 **🧠 Bucket Enforcer (Qbox + FiniAC)**
 
@@ -8,6 +9,7 @@ A lightweight and reliable routing bucket enforcement system for FiveM servers u
 
 This script ensures all players are placed into a single routing bucket (bucket 0) after joining, preventing players from being isolated in separate worlds.
 
+----------------
 
 **🚨 Problem This Solves**
 
@@ -29,8 +31,8 @@ Improper handling of routing bucket restoration
 
 Incorrect event timing (e.g. wrong framework events)
 
-
-**✅ Features**
+----------------
+**✅ Features:**
 
 🔒 Forces all players into bucket 0
 
@@ -46,7 +48,7 @@ Incorrect event timing (e.g. wrong framework events)
 
 🧪 Manual commands for testing and fixing
 
-
+----------------
 **📦 Requirements**
 
 ox_lib
@@ -55,7 +57,7 @@ Qbox (qbx_core)
 
 Fini Anti-Cheat (FiniAC)
 
-
+----------------
 **📁 Installation**
 
 Create a folder:
@@ -78,10 +80,11 @@ ensure finiac
 ensure qbx_core
 ensure bucket_enforcer
 
-
+----------------
 **⚠️ Important:**
 Make sure this resource loads after FiniAC and qbx_core
 
+----------------
 **⚙️ How It Works**
 
 🧩 FiniAC Integration
@@ -100,7 +103,7 @@ Sets the original routing bucket to 0
 
 Ensures FiniAC returns players to the correct world
 
-
+----------------
 **🧩 Qbox Integration**
 
 Uses the correct Qbox event:
@@ -109,7 +112,7 @@ QBCore:Server:OnPlayerLoaded
 
 This ensures bucket enforcement happens after the player fully loads into the world.
 
-
+----------------
 **🔁 Smart Rechecks**
 
 The script runs delayed checks at:
@@ -126,7 +129,7 @@ The script runs delayed checks at:
 
 These re-enforce bucket 0 silently without triggering visual flicker.
 
-
+----------------
 **👁️ Visibility Fix (Client)**
 
 Includes optional client-side:
@@ -139,7 +142,7 @@ Conceal cleanup
 
 Only triggered when needed to avoid flickering.
 
-
+----------------
 **🎮 Commands**
 
 /bucket
@@ -164,7 +167,7 @@ Forces all players into bucket 0.
 
 Outputs detailed debug info to server console.
 
-
+----------------
 **🧪 Debug Logging**
 
 The script logs:
@@ -181,7 +184,7 @@ Example:
 
 Moved 6 (PlayerName) from bucket 1 to 0 | reason=QBCore:Server:OnPlayerLoaded
 
-
+----------------
 **⚠️ Notes**
 
 This script enforces a single global bucket (0)
@@ -197,7 +200,7 @@ NetworkConcealPlayer
 
 apartments / shells / housing
 
-
+----------------
 **🧠 Why This Works**
 
 Uses correct Qbox load timing
